@@ -17,7 +17,7 @@ def index(request):
     context_dict = {'boldmessage': 'Crunchy, creamy, cookie, candy, cupcake!'}
     context_dict['categories'] = category_list
     context_dict['pages'] = page_list
-    context_dict['extra'] = 'From the model solution on GitHub'
+
 
     return render(request, 'rango/index.html', context=context_dict)
 
@@ -61,7 +61,6 @@ def add_page(request, category_name_slug):
     except:
         category = None
 
-    # You cannot add a page to a Category that does not exist... DM
     if category is None:
         return redirect('/rango/')
 

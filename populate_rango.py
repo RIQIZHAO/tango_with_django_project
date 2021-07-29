@@ -3,10 +3,8 @@ import os
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'tango_with_django_project.settings')
 
 import django
-
 django.setup()
 from rango.models import Category, Page
-
 
 # For an explanation of what is going on here, please refer to the TwD book.
 
@@ -69,7 +67,6 @@ def add_cat(name, views=0, likes=0):
     c.likes = likes
     c.save()
     return c
-
 
 # Start execution here!
 if __name__ == '__main__':

@@ -4,6 +4,8 @@ from rango.models import Category
 from rango.models import Page
 from rango.forms import CategoryForm
 from django.shortcuts import redirect
+from rango.forms import PageForm
+from django.urls import reverse
 
 
 def index(request):
@@ -39,7 +41,6 @@ def show_category(request, category_name_slug):
 
     return render(request, 'rango/category.html', context=context_dict)
 
-
 def add_category(request):
     form = CategoryForm()
 
@@ -53,7 +54,6 @@ def add_category(request):
             print(form.errors)
 
     return render(request, 'rango/add_category.html', {'form': form})
-
 
 def add_page(request, category_name_slug):
     try:

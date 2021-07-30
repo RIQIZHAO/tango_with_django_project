@@ -23,9 +23,10 @@ def index(request):
     context_dict['pages'] = page_list
 
     #request.session.set_test_cookie()
+    response = render(request, 'rango/index.html', context=context_dict)
+    visitor_cookie_handler(request, response)
 
-
-    return render(request, 'rango/index.html', context=context_dict)
+    return response
 
 def about(request):
     # Spoiler: you don't need to pass a context dictionary here.
@@ -164,4 +165,4 @@ def visitor_cookie_handler(request, response):
     else:
         response.set_cookie('last_visit', last_visit_cookie)
 
-    request.set_cookie('visits', visits)
+    response.set_cookie('visits', visits)

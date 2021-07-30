@@ -28,6 +28,7 @@ SECRET_KEY = 'django-insecure-lqj!+g-gju^8_0$ew$m35bdc^_n++eu29aqq*acqhb^^lokoem
 DEBUG = True
 
 ALLOWED_HOSTS = []
+LOGIN_URL='/rango/login/'
 
 
 # Application definition

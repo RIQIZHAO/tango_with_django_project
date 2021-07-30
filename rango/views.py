@@ -24,7 +24,7 @@ def index(request):
 
     #request.session.set_test_cookie()
     visitor_cookie_handler(request)
-    context_dict['visits'] = request.session['visits']
+
     response = render(request, 'rango/index.html', context=context_dict)
 
     return response

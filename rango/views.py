@@ -21,11 +21,17 @@ def index(request):
     context_dict['categories'] = category_list
     context_dict['pages'] = page_list
 
+    request.session.set_test_cookie()
+
 
     return render(request, 'rango/index.html', context=context_dict)
 
 def about(request):
     # Spoiler: you don't need to pass a context dictionary here.
+    if request.session.test_cookie_worked():
+        print("TEST COOKIE WORKED!")
+        request.session.delete_test_cookie()
+
     return render(request, 'rango/about.html')
 
 
